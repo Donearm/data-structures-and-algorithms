@@ -58,6 +58,12 @@ class LinkedList(object):
         self.tail = node
         self.size += 1
 
+    def traverse(self):
+        n = self.head
+        while n != None:
+            yield n.data
+            n = n.next_node
+
     # Check if a value is present in the list or not
     def contains(self, value):
         n = self.head
@@ -91,8 +97,6 @@ def main():
     l.insert(third_node)
     l.printList()
     l.contains("abc")
-    l.remove(second_node)
-    l.printList()
 
 if __name__ == '__main__':
     main()
