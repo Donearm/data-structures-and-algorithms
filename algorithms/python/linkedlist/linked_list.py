@@ -58,11 +58,24 @@ class LinkedList(object):
         self.tail = node
         self.size += 1
 
+    # Traverse the list and yield every data in it
     def traverse(self):
         n = self.head
         while n != None:
             yield n.data
             n = n.next_node
+
+    # Traverse the list from the tail
+    def reverseTraverse(self):
+        if self.tail != None:
+            curr = self.tail
+            while curr != self.head:
+                prev = self.head
+                while prev.next_node != curr:
+                    prev = prev.next_node
+                yield curr.data
+                curr = prev
+            yield curr.data
 
     # Check if a value is present in the list or not
     def contains(self, value):
