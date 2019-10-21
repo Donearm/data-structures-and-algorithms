@@ -10,13 +10,12 @@ package main
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-
 import (
 	"fmt"
 )
 
 type Node struct {
-	data interface{}
+	data      interface{}
 	next_node *Node
 }
 
@@ -31,7 +30,9 @@ func newNode(val interface{}) *Node {
 }
 
 func (n *Node) getData() interface{} {
-	return n.data } 
+	return n.data
+}
+
 func (n *Node) setData(val interface{}) {
 	n.data = val
 }
@@ -120,8 +121,6 @@ func (ll *LinkedList) contains(v interface{}) bool {
 	return false
 }
 
-
-
 func main() {
 	ll := newLinkedList()
 	fmt.Println(ll.size)
@@ -133,4 +132,3 @@ func main() {
 	ll.insert(n3)
 	ll.printList()
 }
-
