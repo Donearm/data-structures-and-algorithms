@@ -7,5 +7,6 @@ The most common data structures and algorithms will be eventually covered in thi
 
 ## List of implementations
 
-* Linked Lists
-	* [Linked Lists](algorithms/linkedlist/linked_list.py)
+* Python
+	* Linked Lists
+		* [Linked Lists](algorithms/python/linkedlist/linked_list.py)
