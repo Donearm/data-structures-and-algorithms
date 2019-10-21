@@ -70,6 +70,15 @@ class LinkedList(object):
         print("Value is absent")
         return False
 
+    # Remove a node from the list
+    def remove(self, node):
+        if node is None or node.next_node is None:
+            raise ValueError
+        node.data = node.next_node.data
+        node.next_node = node.next_node.next_node
+
+        self.size -= 1
+
 def main():
     # Test functionalities
     l = LinkedList()
@@ -82,6 +91,8 @@ def main():
     l.insert(third_node)
     l.printList()
     l.contains("abc")
+    l.remove(second_node)
+    l.printList()
 
 if __name__ == '__main__':
     main()

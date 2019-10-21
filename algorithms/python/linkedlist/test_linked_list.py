@@ -45,6 +45,17 @@ class TestLinkedList(unittest.TestCase):
         self.list.insert(self.node3)
         self.assertTrue(self.list.contains(self.value_to_find))
 
+    def test_remove(self):
+        # start with head and then insert a few random nodes
+        head = self.list.insert(linked_list.Node(1))
+        for i in range(2, 5):
+            self.list.insert(linked_list.Node(i))
+
+        self.assertEqual(self.list.size, 4)
+        self.node_to_remove = self.list.head.next_node
+        self.list.remove(self.node_to_remove)
+        self.assertEqual(self.list.size, 3)
+
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(TestLinkedList)
     unittest.TextTestRunner(verbosity=2).run(suite)
