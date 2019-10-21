@@ -1,4 +1,5 @@
-# data-structures-and-algorithms
+# Data Structures & Algorithms
+
 A playground for data structures and algorithms
 
 ## Scope
