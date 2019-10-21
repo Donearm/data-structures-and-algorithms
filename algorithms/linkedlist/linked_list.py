@@ -4,7 +4,7 @@
 #
 # Copyright (c) 2019, Gianluca Fiore
 #
-############################################################################### 
+###############################################################################
 
 __author__ = "Gianluca Fiore"
 
@@ -58,6 +58,18 @@ class LinkedList(object):
         self.tail = node
         self.size += 1
 
+    # Check if a value is present in the list or not
+    def contains(self, value):
+        n = self.head
+        while n:
+            if n.getData() == value:
+                print("Value is present")
+                return True
+            n = n.next_node
+
+        print("Value is absent")
+        return False
+
 def main():
     # Test functionalities
     l = LinkedList()
@@ -69,6 +81,7 @@ def main():
     l.insert(second_node)
     l.insert(third_node)
     l.printList()
+    l.contains("abc")
 
 if __name__ == '__main__':
     main()
