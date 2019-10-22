@@ -11,6 +11,7 @@ The most common data structures and algorithms will be eventually covered in thi
 * Python
 	* Linked Lists
 		* [Linked Lists](algorithms/python/linkedlist/linked_list.py)
+		* [Doubly Linked Lists](algorithms/python/linkedlist/doubly_linked_list.py)
 
 * Go
 	* Linked Lists
