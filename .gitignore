@@ -13,3 +13,6 @@ __pycache__/
 /*.egg
 # docs
 build/
+
+# Go tests' coverage html reports
+coverage.html
