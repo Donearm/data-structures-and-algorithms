@@ -121,6 +121,45 @@ func (ll *LinkedList) contains(v interface{}) bool {
 	return false
 }
 
+func (ll *LinkedList) remove(n *Node) bool {
+	var curr *Node
+	if ll.head == nil {
+		// Empty list
+		return false
+	}
+	curr = ll.head
+	if curr.data == n.data {
+		if ll.head == ll.tail {
+			// there's only the head in the list, remove it
+			ll.head = nil
+			ll.tail = nil
+		} else {
+			// node is the head, change head then to the next node in list
+			ll.head = ll.head.next_node
+		}
+		ll.size -= 1
+		return true
+	}
+	for curr.next_node != nil && curr.next_node.data != n.data {
+		// iterate on the list
+		curr = curr.next_node
+	}
+
+	if curr.next_node != nil {
+		if curr.next_node == ll.tail {
+			// node is the tail
+			ll.tail = curr
+		}
+		// node is between head and tail, so skip it to remove
+		curr.next_node = curr.next_node.next_node
+		ll.size -= 1
+		return true
+	}
+	// if all the tests fail, node is not in the list
+	return false
+}
+
+
 func main() {
 	ll := newLinkedList()
 	fmt.Println(ll.size)
@@ -130,5 +169,9 @@ func main() {
 	ll.insert(n1)
 	ll.insert(n2)
 	ll.insert(n3)
+	fmt.Println("Original list")
+	ll.printList()
+	ll.remove(n3)
+	fmt.Println("List removed")
 	ll.printList()
 }
