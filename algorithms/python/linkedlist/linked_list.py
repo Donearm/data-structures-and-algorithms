@@ -9,9 +9,11 @@
 __author__ = "Gianluca Fiore"
 
 # Big Oh on Linked Lists:
-# Insertion = O(1) if the node to be inserted is the head or tail, otherwise it's O(n)
+# Insertion = O(1) if the node to be inserted is the head or tail,
+#                otherwise it's O(n)
 # Deletion = O(n)
 # Searching = O(n)
+
 
 class Node(object):
     def __init__(self, data=None, next_node=None):
@@ -26,6 +28,7 @@ class Node(object):
     def setData(self, val):
         self.data = val
 
+
 class LinkedList(object):
     def __init__(self, head=None, tail=None):
         self.head = head
@@ -34,7 +37,7 @@ class LinkedList(object):
 
     # Print all values of nodes in the list
     def printList(self):
-        if self.head == None:
+        if self.head is None:
             print("Empty List")
             return
 
@@ -50,7 +53,7 @@ class LinkedList(object):
 
     # Insert a new Node in the list
     def insert(self, node):
-        if self.head == None:
+        if self.head is None:
             self.head = node
         else:
             self.tail.next_node = node
@@ -61,13 +64,13 @@ class LinkedList(object):
     # Traverse the list and yield every data in it
     def traverse(self):
         n = self.head
-        while n != None:
+        while n is not None:
             yield n.data
             n = n.next_node
 
     # Traverse the list from the tail
     def reverseTraverse(self):
-        if self.tail != None:
+        if self.tail is not None:
             curr = self.tail
             while curr != self.head:
                 prev = self.head
@@ -98,18 +101,20 @@ class LinkedList(object):
 
         self.size -= 1
 
+
 def main():
     # Test functionalities
-    l = LinkedList()
+    ll = LinkedList()
     new_node = Node(13)
     second_node = Node("abc")
     third_node = Node(8.4)
 
-    l.insert(new_node)
-    l.insert(second_node)
-    l.insert(third_node)
-    l.printList()
-    l.contains("abc")
+    ll.insert(new_node)
+    ll.insert(second_node)
+    ll.insert(third_node)
+    ll.printList()
+    ll.contains("abc")
+
 
 if __name__ == '__main__':
     main()
