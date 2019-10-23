@@ -8,6 +8,7 @@
 
 __author__ = "Gianluca Fiore"
 
+
 class Node(object):
     def __init__(self, data=None, next_node=None, prev_node=None):
         self.data = data
@@ -22,6 +23,7 @@ class Node(object):
     def setData(self, val):
         self.data = val
 
+
 class DoublyLinkedList(object):
     def __init__(self, head=None, tail=None):
         self.head = head
@@ -34,7 +36,7 @@ class DoublyLinkedList(object):
 
     # Insert a new Node in the list
     def insert(self, node):
-        if self.head == None:
+        if self.head is None:
             self.head = node
             self.tail = node
             self.size += 1
@@ -46,10 +48,10 @@ class DoublyLinkedList(object):
 
     # Remove a node from the list
     def remove(self, node):
-        if self.head == None:
+        if self.head is None:
             # List empty, return false
             return False
-        
+
         if node.data == self.head.data:
             if self.head == self.tail:
                 self.head = None
@@ -62,7 +64,7 @@ class DoublyLinkedList(object):
             return True
 
         curr = self.head.next_node
-        while curr != None and node.data != curr.data:
+        while curr is not None and node.data is not curr.data:
             curr = curr.next_node
 
         if curr == self.tail:
@@ -70,7 +72,7 @@ class DoublyLinkedList(object):
             self.tail.next_node = None
             self.size -= 1
             return True
-        elif curr != None:
+        elif curr is not None:
             curr.prev_node.next_node = curr.next_node
             curr.next_node.prev_node = curr.prev_node
             self.size -= 1
@@ -80,7 +82,7 @@ class DoublyLinkedList(object):
 
     # Print all values of nodes in the list
     def printList(self):
-        if self.head == None:
+        if self.head is None:
             print("Empty List")
             return
 
@@ -93,7 +95,7 @@ class DoublyLinkedList(object):
     # Reverse traversal of the list
     def reverseTraversal(self):
         curr = self.tail
-        while curr != None:
+        while curr is not None:
             yield curr.data
             curr = curr.prev_node
 
@@ -108,6 +110,6 @@ def main():
     ll.insert(n3)
     ll.printList()
 
+
 if __name__ == '__main__':
     main()
-
