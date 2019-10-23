@@ -44,6 +44,40 @@ class DoublyLinkedList(object):
             self.tail = node
             self.size += 1
 
+    # Remove a node from the list
+    def remove(self, node):
+        if self.head == None:
+            # List empty, return false
+            return False
+        
+        if node.data == self.head.data:
+            if self.head == self.tail:
+                self.head = None
+                self.tail = None
+                self.size -= 1
+            else:
+                self.head = self.head.next_node
+                self.head.prev_node = None
+                self.size -= 1
+            return True
+
+        curr = self.head.next_node
+        while curr != None and node.data != curr.data:
+            curr = curr.next_node
+
+        if curr == self.tail:
+            self.tail = self.tail.prev_node
+            self.tail.next_node = None
+            self.size -= 1
+            return True
+        elif curr != None:
+            curr.prev_node.next_node = curr.next_node
+            curr.next_node.prev_node = curr.prev_node
+            self.size -= 1
+            return True
+        else:
+            return False
+
     # Print all values of nodes in the list
     def printList(self):
         if self.head == None:
@@ -56,12 +90,22 @@ class DoublyLinkedList(object):
             print(curr.getData())
             curr = curr.next_node
 
+    # Reverse traversal of the list
+    def reverseTraversal(self):
+        curr = self.tail
+        while curr != None:
+            yield curr.data
+            curr = curr.prev_node
+
+
 def main():
     ll = DoublyLinkedList()
     n1 = Node(12)
     n2 = Node(33)
+    n3 = Node("ggg")
     ll.insert(n1)
     ll.insert(n2)
+    ll.insert(n3)
     ll.printList()
 
 if __name__ == '__main__':
