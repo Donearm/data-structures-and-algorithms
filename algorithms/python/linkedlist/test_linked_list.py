@@ -11,6 +11,7 @@ __author__ = "Gianluca Fiore"
 import unittest
 import linked_list
 
+
 class TestLinkedList(unittest.TestCase):
 
     def setUp(self):
@@ -55,6 +56,7 @@ class TestLinkedList(unittest.TestCase):
         self.node_to_remove = self.list.head.next_node
         self.list.remove(self.node_to_remove)
         self.assertEqual(self.list.size, 3)
+
 
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(TestLinkedList)
