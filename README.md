@@ -16,3 +16,4 @@ The most common data structures and algorithms will be eventually covered in thi
 * Go
 	* Linked Lists
 		* [Linked Lists](algorithms/go/linkedlist/linked_list.go)
+		* [Doubly Linked Lists](algorithms/go/doublylinkedlist/doubly_linked_list.go)
