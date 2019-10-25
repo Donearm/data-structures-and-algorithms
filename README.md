@@ -12,6 +12,9 @@ The most common data structures and algorithms will be eventually covered in thi
 	* Linked Lists
 		* [Linked Lists](algorithms/python/linkedlist/linked_list.py)
 		* [Doubly Linked Lists](algorithms/python/linkedlist/doubly_linked_list.py)
+	* Binary Search Trees
+		* [Binary Search Trees](algorithms/python/bst/bst.py)
+
 
 * Go
 	* Linked Lists
